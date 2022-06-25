@@ -14,7 +14,9 @@ pipeline {
         stage('test2') {
             steps {
                 dir('molecule') {
-                    sh "ls -la"
+                    sh 'pip install molecule==3.4.0'
+                    sh 'pip install "ansible-lint<6.0.0"'
+                    sh 'pip install molecule_docker'
                 }
                 
             }
